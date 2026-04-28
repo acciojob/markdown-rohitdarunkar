@@ -3,15 +3,9 @@ import ReactMarkdown from "react-markdown";
 
 const MarkdownEditor = () => {
   const [text, setText] = useState("# Hello world");
-  const [preview, setPreview] = useState("");
-
-  useEffect(() => {
-    setPreview(text);
-  }, [text]);
 
   return (
     <div style={{ display: "flex" }}>
-      
       {/* INPUT AREA */}
       <textarea
         className="textarea"
@@ -25,9 +19,8 @@ const MarkdownEditor = () => {
         className="preview"
         style={{ width: "50%", padding: "10px" }}
       >
-        <ReactMarkdown>{preview}</ReactMarkdown>
+        <ReactMarkdown>{text}</ReactMarkdown>
       </div>
-
     </div>
   );
 };
